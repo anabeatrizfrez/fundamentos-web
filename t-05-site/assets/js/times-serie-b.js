@@ -8,7 +8,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch("https://v3.football.api-sports.io/teams?league=72&season=2023", requestOptions)
+fetch("https://v3.football.api-sports.io/teams?league=72&season=2025", requestOptions)
     .then(response => response.json())
     .then(data => {
         var container = document.getElementById("times");

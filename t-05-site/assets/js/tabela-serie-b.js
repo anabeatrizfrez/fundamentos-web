@@ -8,7 +8,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch("https://v3.football.api-sports.io/standings?season=2023&league=72", requestOptions)
+fetch("https://v3.football.api-sports.io/standings?season=2025&league=72", requestOptions)
     .then(response => response.json())
     .then(data => {
         var container = document.getElementById("tabela");

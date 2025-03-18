@@ -18,17 +18,22 @@ main {
 }
 
 .time {
+    width: 300px;
     display: flex;
-    max-width: 180px;
+    max-width: 200px;
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #009b558c;
     border-radius: 5px;
 }
 
+.time img {
+    max-height: 150px;
+    max-width: 150px;
+}
 
 
 p {

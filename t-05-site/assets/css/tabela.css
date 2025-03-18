@@ -18,6 +18,11 @@ tbody td {
     padding: 6px 0;
 }
 
+tbody td img {
+    height: 90%;
+    width: 30px;
+}
+
 /* ESTILIZANDO COLUNAS */
 
 thead tr th:nth-child(1n + 4) {
