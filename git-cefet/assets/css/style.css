@@ -1,6 +1,11 @@
 @import url('reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
 
+:root {
+    --color01: #00407A;
+    --color02: #ffffff;
+}
+
 @keyframes bg-gradient { 
     from {
         background-position: 0% 50%;;
@@ -41,8 +46,9 @@ figure {
 
 
 h1 {
-    color: #fff;
+    color: var(--color02);
     font-size: 2rem;
+    text-shadow: 1px 1px 8px var(--color01);
 }
 
 .trabalhos-main {
@@ -54,7 +60,7 @@ h1 {
 }
 
 .trabalhos-main h2 {
-    color: #00407A;
+    color: var(--color01);
     font-size: 1.5rem;
 }
 
@@ -67,13 +73,13 @@ h1 {
 
 .link {
     display: inline-block;
-    background-color: #00407A;
+    background-color: var(--color01);
     min-width: 180px;
     padding: 10px 5px;
     border-radius: 10px;
-    border: solid 2px #00407A;
+    border: solid 2px var(--color01);
 
-    color: #fff;
+    color: var(--color02);
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
@@ -82,9 +88,9 @@ h1 {
 }
 
 .link:hover {
-    background-color: #fff;
-    color: #00407A;
-    border: solid 2px #00407A;
+    background-color: var(--color02);
+    color: var(--color01);
+    border: solid 2px var(--color01);
 }
 
 @media (max-width: 616px) { 
