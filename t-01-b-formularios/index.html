@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Formulário</title>
+</head>
+<body>
+    <header>
+        <div class="barra-gradiente-topo"></div>
+    </header>
+    <main>
+        <div class="barra-gradiente-meio"></div>
+        <form action="http://httpbin.org/post" method="post" class="formulario">
+            <fieldset class="formulario-borda">
+                <legend class="legenda-formulario">Cadastro</legend>
+                <div class="informacoes-formulario">
+                    <label for="nome" class="descricao-formulario">Nome:</label>
+                    <input type="text" name="nome" id="nome" required pattern="[A-Za-z].{2,}" title="O elemento deve conter 3 ou mais caracteres e conter apenas letras" class="input-formulario">
+                </div>
+                <div class="informacoes-formulario">
+                    <label for="idade">Idade:</label>
+                    <input type="number" name="idade" id="idade" required min="18" max="99" class="input-formulario">
+                </div>
+                <div class="radio-formulario">
+                    <p>Gênero:</p>
+                    <input type="radio" name="genero" id="masculino" value="masculino"><label for="masculino">Masculino</label>
+                    <input type="radio" name="genero" id="feminino" value="feminino"><label for="feminino">Feminino</label>
+                    <input type="radio" name="genero" id="outro" value="outro"><label for="outro">Outro</label>
+                </div>
+                <div class="informacoes-formulario">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" class="input-formulario">
+                </div>
+                <div class="informacoes-formulario">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha" pattern=".{8,}" class="input-formulario" title="Sua senha deve conter pelo menos 8 caracteres">
+                </div>
+                <div class="informacoes-formulario">
+                    <label for="nacionalidade">País:</label>
+                    <select name="nacionalidade" id="nacionalidade" class="select-formulario">
+                        <option value="escolher-nacionalidade">Escolha um país</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="estados-unidos">Estados Unidos</option>
+                        <option value="canada">Canadá</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="informacoes-formulario">
+                    <label for="obs">Observações:</label>
+                    <textarea name="obs" id="obs" cols="30" rows="10" class="textarea-formulario"></textarea>
+                </div>
+                <div class="botoes-formulario">
+                    <button class="botao-enviar">Enviar</button>
+                    <button type="reset" class="botao-limpar">Limpar</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <div class="barra-gradiente-baixo"></div>
+    </footer>
+</body>
+</html>

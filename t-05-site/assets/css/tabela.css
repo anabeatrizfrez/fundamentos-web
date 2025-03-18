@@ -1,0 +1,121 @@
+@import url('style.css');
+
+#main-titulo {
+    margin: 50px 0 50px 250px;
+}
+
+.tabela {
+    width: 550px;
+    margin: 50px auto;
+}
+
+thead tr th:first-child {
+    width: 0;
+}
+
+thead th,
+tbody td {
+    padding: 6px 0;
+}
+
+/* ESTILIZANDO COLUNAS */
+
+thead tr th:nth-child(1n + 4) {
+    width: 32px;
+}
+
+thead tr th:nth-child(1n + 3),
+tbody tr td:not(:nth-child(3)) {
+    text-align: center;
+}
+
+body tr td:nth-child(4) {
+    font-weight: 700;
+}
+
+tbody tr td:nth-child(2n + 4) {
+    background-color: #ececec;
+}
+
+/* CLASSIFICACAO */
+
+.libertadores, .promocao {
+    border-left: 3px solid #4285F4;
+}
+
+.qualificatorias-libertadores {
+    border-left: 3px solid #FA7B17;
+}
+
+.sulamericana {
+    border-left: 3px solid #34A853;
+}
+
+.nada {
+    border-left: 3px solid #ccc;
+}
+
+.rebaixamento {
+    border-left: 3px solid #EA4335;
+}
+
+.libertadores,
+.qualificatorias-libertadores,
+.sulamericana,
+.nada,
+.rebaixamento {
+    padding-left: 8px;
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+
+    .hamburger {
+        margin-left: 0;
+        margin-right: 25px;
+        padding: 0;
+    }
+
+    .nav-top-titulo {
+        margin: 0 !important;
+    }
+
+    header picture {
+        display: none;
+    }
+
+    #main-titulo {
+        margin: 30px 20px;
+        text-align: center;
+    }
+
+    .tabela {
+        width: auto;
+        margin: 30px auto;
+    }
+
+    thead tr th:nth-child(7),
+    tbody tr td:nth-child(7),
+    thead tr th:nth-child(8),
+    tbody tr td:nth-child(8),
+    thead tr th:nth-child(9),
+    tbody tr td:nth-child(9),
+    thead tr th:nth-child(10),
+    tbody tr td:nth-child(10){
+        display: none;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+    #main-titulo {
+        margin: 50px 0 0 5%;
+    }
+
+    .nav-top-titulo {
+        text-align: center;
+    }
+
+}

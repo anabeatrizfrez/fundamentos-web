@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Autenticação Web</title>
+</head>
+<body>
+    <header>
+        <h1>Fundamentos da Web</h1>
+        <p class="italico">Exercícios</p>
+    </header>
+    <div class="linha"><p class="retornar"><a href="index.html">Retornar</a></div>
+    <main>
+        <h2>Login</h2>
+        <form action="http://httpbin.org/post" method="post" class="formulario-autentica">
+            <fieldset class="bloco-formulario">
+                <legend>Entre em contato conosco!</legend>
+                <table class="tabela-formulario-autentica">
+                    <tr class="uniao-formulario"> 
+                        <td class="descricao-formulario">Login</td>
+                        <td><input type="text" name="login-autenticacao" placeholder="Digite seu login" class="input-formulario border-input"></td>
+                    </tr> 
+                    <tr> 
+                        <td class="descricao-formulario">Senha</td>
+                        <td><input type="text" name="senha-autenticacao" placeholder="Digite a senha" class="input-formulario border-input"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="botoes-formulario-autentica border-button">
+                            <button>Login</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

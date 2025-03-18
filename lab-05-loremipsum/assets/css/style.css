@@ -1,0 +1,173 @@
+@import url('reset.css');
+
+a {
+    text-decoration: none;
+} a:hover {
+    cursor: pointer;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, footer {
+    background-color: #221301;
+}
+
+header {
+    padding: 80px 0;
+}
+
+header h1, header p {
+    color: #fff;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #ffffff52;
+    text-transform: uppercase;
+    font-size: .6rem;
+}
+
+header p a {
+    color: #ffffffaf;
+}
+
+header nav {
+    margin: auto;
+    text-transform: uppercase;
+}
+
+.lista__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    margin-top: 50px;
+}
+
+.lista__header li a {
+    color: #fff;
+    font-size: .7rem;
+    letter-spacing: 2px;
+}
+
+.lista__header li:first-child a {
+    background-color: #bf294d;
+    padding: 10px 20px;
+}
+
+.destaque {
+    background-color: #d74d28;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.destaque h2 {
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+}
+
+.destaque p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 25px;
+}
+
+.first_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 80px 0;
+}
+
+.first_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 30px;
+    max-width: 250px;
+    font-size: .8rem;
+    line-height: 20px;
+}
+
+.first_div h3 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+figure img {
+    width: 50px;
+}
+
+.link_style {
+    background-color: #bf294d;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: 2px;
+    padding: 10px 30px;
+}
+
+.second_section {
+    color: #333333;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.second_section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.second_section > p {
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.second_div {
+    display: inline-block;
+    max-width: 250px;
+}
+
+.second_div h3 {
+    text-transform: uppercase;
+}
+
+.second_div p {
+    line-height: 25px;
+    margin: 20px 0 50px;
+}
+
+.second_div .link_style {
+    padding: 15px 40px;
+}
+
+footer {
+    color: #ffffff3f;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 80px 0;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 80px;
+}
+
+footer ul li a img {
+    width: 30px;
+    opacity: .8;
+}

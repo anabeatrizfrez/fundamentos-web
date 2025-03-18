@@ -1,0 +1,170 @@
+@import url('reset.css');
+
+body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header, main, .retornar {
+    margin-left: 100px;
+}
+
+.border-input {
+    border: 1px groove #c0c0c0;
+}
+
+.border-button button {
+    border: 1px solid #b4b4b4;
+}
+
+/* INDEX */
+
+h1 {
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+header p {
+    margin: 16px 0;
+}
+
+.linha {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    background-color: #808080;
+}
+
+.italico  {
+    font-style: italic;
+}
+
+.link-index {
+    margin-bottom: 15px;
+}
+
+/* RETORNAR LINHA */
+
+.retornar {
+    display: flex;
+    align-items: center;
+}
+
+/* TEXTOS */
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* FORMULARIO */
+
+.bloco-formulario {
+    border: 1px groove #c0c0c0;
+    padding: 5px 0;
+}
+
+/* TABELA */
+
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 10px;
+}
+
+td {
+    vertical-align: bottom;
+}
+
+/* BLOCOS DESCRICAO FORMULARIO */
+
+.descricao-formulario {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.input-formulario {
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 3%;
+}
+
+.textarea-formulario {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.select-formulario {
+    font-size: .9em;
+    width: 415px;
+}
+
+.botoes-formulario button, .botoes-formulario-autentica button, .botao-reset-livros {
+    margin-top: 15px;
+}
+
+.botoes-formulario button, .botoes-formulario-autentica button, .botao-reset-livros {
+    width: 100px;
+    height: 50px;
+    border-radius: 5%;
+}
+
+.botoes-formulario button:hover, .botoes-formulario-autentica button:hover, .botoes-formulario-livros button:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+}
+
+/* HTML AUTENTICACAO */
+
+.tabela-formulario-autentica {
+    margin-left: 25%;
+}
+
+.formulario-autentica {
+    width: 900px;
+}
+
+.botoes-formulario-autentica button {
+    margin-left: 80px;
+}
+
+/* HTML CONTATOS */
+
+.formulario-contatos {
+    width: 800px;
+    margin-bottom: 50px;
+}
+
+.tabela-formulario-contatos {
+    margin-left: 20%;
+}
+
+.button-margin-contatos {
+    margin-right: 10px;
+}
+
+/* HTML LIVROS */
+
+.tabela-formulario-livros {
+    margin-left: 30%;
+}
+
+.formulario-livros {
+    width: 900px;
+    margin-bottom: 50px;
+}
+
+.botao-adicionar-livros {
+    width: 120px;
+    height: 50px;
+    border-radius: 5%;
+    margin-right: 15px;
+}

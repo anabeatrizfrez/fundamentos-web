@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Contatos Web</title>
+</head>
+<body>
+    <header>
+        <h1>Fundamentos da Web</h1>
+        <p class="italico">Exercícios</p>
+    </header>
+    <div class="linha"><p class="retornar"><a href="index.html">Retornar</a></div>
+    <main>
+        <h2>Contatos</h2>
+        <form action="http://httpbin.org/post" method="post" class="formulario-contatos">
+            <fieldset class="bloco-formulario">
+                <legend>Entre em contato conosco!</legend>
+                <table class="tabela-formulario-contatos">
+                    <tr> 
+                        <td class="descricao-formulario">Nome</td>
+                        <td><input type="text" name="nome-contato" placeholder="Digite seu nome" class="input-formulario border-input"></td>
+                    </tr> 
+                    <tr> 
+                        <td class="descricao-formulario">Assunto</td>
+                        <td><input type="text" name="assunto-contato" placeholder="Digite o assunto" class="input-formulario border-input"></td>
+                    </tr>
+                    <tr> 
+                        <td class="descricao-formulario">Data da ocorrência</td>
+                        <td><input type="date" name="data-ocorrencia" class="input-formulario border-input"></td>
+                    </tr>
+                    <tr> 
+                        <td class="descricao-formulario">Foto da ocorrência</td>
+                        <td><input type="file" name="foto-ocorrencia"></td>
+                    </tr> 
+                    <tr> 
+                        <td class="descricao-formulario">Telefone</td>
+                        <td><input type="tel" name="telefone-contato" placeholder="Digite seu telefone" class="input-formulario border-input"></td>
+                    </tr> 
+                    <tr> 
+                        <td class="descricao-formulario">Email</td>
+                        <td><input type="email" name="email-contato" placeholder="Digite seu email" class="input-formulario border-input"></td>
+                    </tr> 
+                    <tr> 
+                        <td class="descricao-formulario">Mensagem</td>
+                        <td><textarea cols="40" rows="8" name="mensagem-contato" placeholder="Digite sua mensagem" class="textarea-formulario border-input"></textarea></td>
+                    </tr> 
+                    <tr> 
+                        <td class="descricao-formulario">Estilo</td>
+                        <td>
+                            <select name="Estilo" class="select-formulario border-input">
+                                <option value="academico">Acadêmico</option>
+                                <option value="fantasia">Fantasia</option>
+                                <option value="romance">Romance</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="botoes-formulario border-button">
+                            <button class="button-margin-contatos">Adicionar</button>
+                            <button type="reset">Limpar</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,657 @@
+@import url("reset.css");
+
+body {
+    background-color: #00212d;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 70vw;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu-header, header button {
+    display: none;
+}
+
+/* H1 HEADER*/
+
+header h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+header strong {
+    color: #009de0;
+}
+
+/* NAVEGAÇÃO HEADER */
+
+header nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+
+header nav ul a {
+    font-size: 1rem;
+    color: #fff;
+}
+
+nav ul a[href="#"] {
+    color: #00607c;
+}
+
+/* MENU */
+
+main {
+    background-color: #fff;
+    width: 70vw;
+    margin: auto;
+}
+
+/* SECTION 1 */
+
+.banner {
+    padding: 20px 20px 0;
+}
+
+.banner-div {
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+    background-image: url(images/surf.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    color: #fff;
+    padding: 100px 50px;
+}
+
+.banner h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    width: 400px;
+}
+
+/* SECTION 2 */
+
+.portfolio {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0 30px;
+    padding: 0 20px;
+}
+
+/* CONTAINERS */
+
+.box {
+    box-sizing: border-box;
+    padding: 20px;
+    color: #fff;
+    background-color: #006c9f;
+}
+
+.box h3 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* BOTAO CONTAINER */
+
+.box button {
+    margin-top: 40px;
+    padding: 10px 5px;
+    color: #fff;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom, #00b5ed, #0076aa);
+    border: 0;
+    border-radius: 2px;
+}
+
+.box button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, #008bb6, #005a81);
+}
+
+/* SECTION 3 */
+
+.testimonials {
+    display: flex;
+    padding: 0 20px 0;
+}
+
+.container {
+    display: flex;
+    gap: 15px;
+}
+
+.testimonials h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.testimonials img {
+    width: 300px;
+}
+
+.testimonials p {
+    width: 250px;
+}
+
+.testimonials a {
+    display: block;
+    color: #009de0;
+    margin-top: 85px;
+}
+
+/* SECTION 3.2 */
+
+.comments {
+    margin-left: 30px;
+}
+
+.comments h3 {
+    margin-bottom: 15px;
+}
+
+blockquote {
+    background-color: #bfeeff;
+    font-style: italic;
+    padding: 20px 20px 30px;
+}
+
+.comments-style {
+    width: 0; 
+    height: 0;
+    margin-left: 10%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #bfeeff;
+}
+
+.comments-author {
+    font-size: small;
+    margin-top: 5px;
+}
+
+/* NAVEGACAO BOTTOM */
+
+main nav {
+    margin-top: 40px;
+    height: 50px;
+    background-color: #bfeeff;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+main nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+main nav ul a{
+    color: #009de0;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 10px 30px;
+}
+
+footer p {
+    color: #fff;
+}
+
+footer ul {
+    display: flex;
+    gap: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Medium devices (landscape tablets, 1199px and up) */
+@media only screen and (max-width: 1199px) {
+
+    body {
+        max-width: 100vw;
+    }
+
+    header {
+        flex-wrap: nowrap;
+        gap: 25px;
+        margin: 25px 0;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    main {
+        width: 100vw;
+    }
+
+    
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .box button {
+        width: 200px;
+        margin: 40px 20% 0;
+    }
+
+    .box:last-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .box:last-child button {
+        width: 500px;
+        margin: 40px 15% 0;
+    }
+
+    .testimonials {
+        justify-content: space-between;
+        gap: 57px;
+    }
+
+    .testimonials article:first-child {
+        max-width: 500px;
+    }
+
+    .testimonials img {
+        width: 230px;
+        height: 200px;
+    }
+
+    .testimonials article:first-child p {
+        width: 200px;
+    }
+
+    .testimonials a {
+        display: block;
+        color: #009de0;
+        margin-top: 10px;
+    }
+
+    .comments blockquote {
+        margin: 0;
+        width: 50vw;
+        max-width: 250px;
+    }
+
+    footer {
+        display: none;
+    }
+
+}
+
+/* X-Small devices (portrait phones, less than 576px) */ 
+@media (max-width: 575px) { 
+
+    /* BOTAO MENU EFEITO*/
+
+    .menu-header, header button {
+        display: inline-block;
+    }
+
+    nav {
+        position: relative;
+        display: inline-block;
+    }
+
+    .list-menu {
+        display: none;
+        padding-right: 10px;
+    }
+
+    .list-menu li a {
+        display: block;
+    }
+
+    nav:hover .list-menu {
+        display: block;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* BOTAO MENU ESTILOS */
+
+    .button-menu-header {
+        border: none;
+        background-color: #00212d;
+    }
+
+    .list {
+        margin-top: 20px;
+    }
+
+    /* HEADER */
+
+    header {
+        margin: 30px 0;
+        padding: 0;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        width: 270px;
+        text-align: center;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 20px;
+    }
+
+    .list li {
+        display: flex;
+        justify-content: flex-end;
+        width: 100px;
+    }
+
+    /* MENU CONTAINER 1 */
+
+    .banner {
+        padding: 0;
+    }
+
+    .banner-div {
+        padding: 0;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        
+    }
+
+    .banner h1 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .banner p {
+        width: 200px;
+    }
+
+    /* MENU CONTAINER 2 */
+
+    .portfolio {
+        padding: 0;
+        margin: 20px 0;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 200px);
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .box h3 {
+        text-align: center;
+    }
+
+    .box:first-child {
+        grid-column: 1 / 2;
+    }
+    
+    .box button, .box:last-child button {
+        width: 200px;
+        margin: 20px auto 0;
+    }
+
+    .align-button {
+        display: flex;
+    }
+
+    .box:last-child {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    /* MENU CONTAINER 3 */
+
+    .testimonials {
+        gap: 20px;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .testimonials h3 {
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 10px;
+    }
+
+    .testimonials img {
+        width: 90vw;
+        height: 30vh;
+    }
+
+    .testimonials article:first-child {
+        width: auto;
+        margin: auto;
+    }
+
+    .testimonials article:first-child p {
+        width: 90vw;
+    }
+
+    .testimonials a {
+        display: flex;
+        justify-content: flex-end;
+        color: #009de0;
+        margin-top: 15px;
+    }
+
+    /* MENU CONTAINER 3.2 */
+
+    .comments {
+        width: 90vw;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        padding: 20px 20px 10px;
+    }
+
+    .comments blockquote {
+        background-color: #bfeeff;
+        font-style: italic;
+        width: 350px;
+        max-width: 80vw;
+        
+    }
+
+    .comments-style {
+        display: none;
+    }
+
+    .comments-author {
+        text-align: end;
+        width: 300px;
+        position: relative;
+        bottom: 30px;
+        right: 10px;
+    }
+
+    .testimonials p {
+        width: auto;
+    }
+
+    main nav {
+        display: none;
+    }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media only screen and (min-width: 576px){
+    
+    header {
+        padding: 10px 0;
+        gap: 5px;
+    }
+
+    header h1 {
+        width: auto;
+        width: 200px;
+    }
+
+    .list {
+        gap: 10px;
+    }
+
+    .align-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .box:last-child button {
+        width: 300px;
+    }
+
+    .testimonials {
+        gap: 30px;
+        display: flex;
+        margin: auto;
+    }
+
+    .testimonials img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .testimonials article:first-child {
+        max-width: 400px;
+        width: 50vw;
+    }
+
+    .comments {
+        width: 445px;
+        margin: 0;
+    }
+
+    blockquote {
+        margin: auto;
+        width: 25vw;
+        max-width: 250px;
+    }
+
+}
+
+
+/* X-Large devices (tablets, 1200px and up) */
+@media only screen and (min-width: 1200px) { 
+
+    header {
+        padding: 30px 10px 20px;
+        gap: 40px;
+    }
+
+    header h1{
+        width: auto;
+    }
+
+    .list {
+        display: flex;
+        gap: 40px;
+    }
+    
+    nav ul a[href="#"] {
+        color: #00607c;
+    }
+
+    .portfolio {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 30px 0 30px;
+        padding: 0 20px;
+    }
+    
+    /* CONTAINERS */
+    
+    .box {
+        width: 300px;
+    }
+    
+    /* BOTAO CONTAINER */
+
+    .align-button {
+        display: block;
+    }
+    
+    .box:last-child button {
+        width: auto;
+    }
+    
+    .comments {
+        width: auto;
+    }
+
+    .testimonials article:first-child {
+        max-width: 500px;
+        width: 50vw;
+    }
+
+    .container p {
+        width: 600px;
+    }
+
+    .testimonials {
+        justify-content: space-between;
+    }
+
+}

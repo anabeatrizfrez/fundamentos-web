@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Livros Web</title>
+</head>
+<body>
+    <header>
+        <h1>Fundamentos da Web</h1>
+        <p class="italico">Exercícios</p>
+    </header>
+    <div class="linha"><p class="retornar"><a href="index.html">Retornar</a></div>
+    <main>
+        <h2>Cadastro de Livros</h2>
+        <form action="http://httpbin.org/post" method="post" class="formulario-livros">
+            <fieldset class="bloco-formulario">
+                <legend>Cadastro de Livros</legend>
+                <table class="tabela-formulario-livros">
+                    <tr> 
+                        <td class="descricao-formulario">Título</td>
+                        <td><input type="text" name="titulo-do-livro" placeholder="Digite o título do livro" class="input-formulario border-input"></td>
+                    </tr> 
+                    <tr> 
+                        <td class="descricao-formulario">Descrição</td>
+                        <td>
+                            <textarea name="descricao-do-livro" cols="40" rows="8" placeholder="Digite uma descrição para o livro" class="textarea-formulario border-input"></textarea>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td class="descricao-formulario">Autores</td>
+                        <td><input type="text" name="autor-do-livro" placeholder="Digite os autores da obra" class="input-formulario border-input"></td>
+                    </tr>
+                    <tr> 
+                        <td class="descricao-formulario">Estilo</td>
+                        <td>
+                            <select name="Estilo" class="select-formulario border-input">
+                                <option value="academico">Acadêmico</option>
+                                <option value="fantasia">Fantasia</option>
+                                <option value="romance">Romance</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="botoes-formulario-livros border-button">
+                            <button class="botao-adicionar-livros">Adicionar</button>
+                            <button class="botao-reset-livros" type="reset">Limpar</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
