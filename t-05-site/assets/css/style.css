@@ -1,5 +1,5 @@
-@import url('/reset.css');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("/reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -22,7 +22,7 @@ body {
 }
 
 .nav-top-titulo {
-  margin: 0 0 0 20px;
+  margin: 0;
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -45,7 +45,6 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  padding-left: 0;
   transition: all 0.5s ease;
 }
 
@@ -149,7 +148,6 @@ body {
   display: block;
   height: 30px;
   top: 25px;
-  margin-left: 15px;
   position: sticky;
   width: 32px;
 }
@@ -212,6 +210,7 @@ body {
   height: 4px;
   position: absolute;
   width: 100%;
+  left: 0;
 }
 .hamburger.is-open .hamb-top {
   -webkit-transform: rotate(45deg);
@@ -245,6 +244,11 @@ body {
 }
 
 /* MAIN */
+
+main {
+  max-width: 2000px;
+  margin: auto;
+}
 
 #main-titulo {
   font-size: 3rem;
@@ -284,7 +288,8 @@ main figure img {
 
 .main-img-divisoes {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: 20px;
 }
 
 .main-img-divisoes a {
@@ -447,7 +452,7 @@ footer p a:hover {
 
   .nav-top-titulo {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .section:not(.section-medias) {
