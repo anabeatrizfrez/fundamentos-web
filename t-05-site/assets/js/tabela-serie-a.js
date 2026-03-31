@@ -12,7 +12,7 @@ const anoAtual = data.getFullYear()
 
 titulo.innerHTML += " " + anoAtual
 
-fetch("https://v3.football.api-sports.io/standings?league=71&season=" + anoAtual,requestOptions)
+fetch("https://v3.football.api-sports.io/standings?league=71&season=2023", requestOptions)
     .then(response => response.json())
     .then(data => {
         var container = document.getElementById("tabela");
