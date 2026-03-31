@@ -38,7 +38,7 @@ fetch("https://v3.football.api-sports.io/standings?season=" + anoAtual + "&leagu
 
         var tbody = document.createElement("tbody");
 
-        data.response[0].league.standings[0].forEach(teamStanding => {
+        data.response[0].leagues.standings[0].forEach(teamStanding => {
             var row = document.createElement("tr");
 
             var rowData = [
