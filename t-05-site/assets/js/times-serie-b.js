@@ -1,24 +1,49 @@
 const titulo = document.getElementById("main-titulo")
 
-var myHeaders = new Headers();
-myHeaders.append("x-rapidapi-key", "5b4e68c8328830ffe84cb2472a09cdef");
-myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
-
-var requestOptions = {
+const requestOptions = {
     method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+    headers: {
+        "x-rapidapi-key": "5b4e68c8328830ffe84cb2472a09cdef"
+    }
 };
 
-const data = new Date()
-const anoAtual = data.getFullYear()
+const anoAtual = new Date().getFullYear();
+const ANO_MINIMO = 2022;
 
-titulo.innerHTML += " " + anoAtual
+function buscarTimes(ano) {
+    return fetch(`https://v3.football.api-sports.io/teams?league=72&season=${ano}`,  requestOptions)
 
-fetch("https://v3.football.api-sports.io/teams?league=72&season=" + anoAtual, requestOptions)
     .then(response => response.json())
     .then(data => {
-        var container = document.getElementById("times");
+        if (
+            data.response &&
+            data.response.length
+        ) {
+            return {ano, data};
+        }
+
+    throw new Error("Sem dados para o ano " + ano);
+    });
+}
+
+function tentarAnos(ano) {
+    if (ano < ANO_MINIMO) {
+        console.error("Nenhum ano válido encontrado");
+        return;
+    }
+
+    buscarTimes(ano)
+    .then(resultado => {
+        titulo.innerHTML += " " + resultado.ano;
+        montarTimes(resultado.data);
+    })
+    .catch(() => {
+        tentarAnos(ano - 1);
+    });
+}
+
+function montarTimes(data) {
+    var container = document.getElementById("times");
 
         data.response.forEach(teamData => {
             var team = teamData.team;
@@ -36,5 +61,6 @@ fetch("https://v3.football.api-sports.io/teams?league=72&season=" + anoAtual, re
             div.appendChild(teamName);
             container.appendChild(div);
         });
-    })
-    .catch(error => console.log('error', error));
+    }
+
+tentarAnos(anoAtual);

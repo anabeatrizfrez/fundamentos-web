@@ -1,74 +1,100 @@
 const titulo = document.getElementById("main-titulo")
 
-var myHeaders = new Headers();
-myHeaders.append("x-rapidapi-key", "5b4e68c8328830ffe84cb2472a09cdef");
-myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
-
-var requestOptions = {
+const requestOptions = {
     method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+    headers: {
+        "x-rapidapi-key": "5b4e68c8328830ffe84cb2472a09cdef"
+    }
 };
 
-const data = new Date()
-const anoAtual = data.getFullYear()
+const anoAtual = new Date().getFullYear();
+const ANO_MINIMO = 2022;
 
-titulo.innerHTML += " " + anoAtual
+function buscarTabela(ano) {
+    return fetch(`https://v3.football.api-sports.io/standings?league=72&season=${ano}`,  requestOptions)
 
-fetch("https://v3.football.api-sports.io/standings?season=" + anoAtual + "&league=72", requestOptions)
     .then(response => response.json())
     .then(data => {
-        var container = document.getElementById("tabela");
+        if (
+            data.response &&
+            data.response.length &&
+            data.response[0].league.standings.length
+        ) {
+            return {ano, data};
+        }
 
-        var table = document.createElement("table");
-        table.classList.add("tabela"); 
+    throw new Error("Sem dados para o ano " + ano);
+    });
+}
 
-        var thead = document.createElement("thead");
-        var headerRow = document.createElement("tr");
+function tentarAnos(ano) {
+    if (ano < ANO_MINIMO) {
+        console.error("Nenhum ano válido encontrado");
+        return;
+    }
 
-        var headers = ["", "Clube", "", "Pts", "PJ", "VIT", "E", "DER", "GM", "GC", "SG"];
-        headers.forEach(headerText => {
-            var th = document.createElement("th");
-            th.textContent = headerText;
-            headerRow.appendChild(th);
-        });
+    buscarTabela(ano)
+    .then(resultado => {
+        titulo.innerHTML += " " + resultado.ano;
+        montarTabela(resultado.data);
+    })
+    .catch(() => {
+        tentarAnos(ano - 1);
+    });
+}
 
-        thead.appendChild(headerRow);
-        table.appendChild(thead);
-        
-        var tbody = document.createElement("tbody");
+function montarTabela(data) {
+    var container = document.getElementById("tabela");
 
-        data.response[0].league.standings[0].forEach(teamStanding => {
-            var row = document.createElement("tr");
+    var table = document.createElement("table");
+    table.classList.add("tabela"); 
 
-            var rowData = [
-                teamStanding.rank,
-                teamStanding.team.logo,
-                teamStanding.team.name,
-                teamStanding.points,
-                teamStanding.all.played,
-                teamStanding.all.win,
-                teamStanding.all.draw,
-                teamStanding.all.lose,
-                teamStanding.all.goals.for,
-                teamStanding.all.goals.against,
-                teamStanding.goalsDiff,
-            ];
+    var thead = document.createElement("thead");
+    var headerRow = document.createElement("tr");
 
-            rowData.forEach((text, index) => {
-                var cell = document.createElement("td");
+    var headers = ["", "Clube", "", "Pts", "PJ", "VIT", "E", "DER", "GM", "GC", "SG"];
+    headers.forEach(headerText => {
+        var th = document.createElement("th");
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
 
-                if (index === 1) {
-                    var logoImg = document.createElement("img");
-                    logoImg.src = text;
-                    logoImg.alt = teamStanding.team.name;
-                    logoImg.height = 25;
-                    logoImg.width = 25;
-                    cell.appendChild(logoImg);
-                } else {
-                    cell.textContent = text;
-                }
-                if (index === 0) {
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+
+    data.response[0].league.standings[0].forEach(teamStanding => {
+        var row = document.createElement("tr");
+
+        var rowData = [
+            teamStanding.rank,
+            teamStanding.team.logo,
+            teamStanding.team.name,
+            teamStanding.points,
+            teamStanding.all.played,
+            teamStanding.all.win,
+            teamStanding.all.draw,
+            teamStanding.all.lose,
+            teamStanding.all.goals.for,
+            teamStanding.all.goals.against,
+            teamStanding.goalsDiff,
+        ];
+
+        rowData.forEach((text, index) => {
+            var cell = document.createElement("td");
+
+            if (index === 1) {
+                var logoImg = document.createElement("img");
+                logoImg.src = text;
+                logoImg.alt = teamStanding.team.name;
+                logoImg.height = 25;
+                logoImg.width = 25;
+                cell.appendChild(logoImg);
+            } else {
+                cell.textContent = text;
+            }
+            if (index === 0) {
                     if (teamStanding.rank <= 4) {
                         cell.classList.add("promocao");
                     }
@@ -78,10 +104,12 @@ fetch("https://v3.football.api-sports.io/standings?season=" + anoAtual + "&leagu
                         cell.classList.add("nada");
                     }
                 }
-                row.appendChild(cell);
-            });
-            tbody.appendChild(row);
+            row.appendChild(cell);
         });
-        table.appendChild(tbody);
-        container.appendChild(table);
-    })
+        tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+    container.appendChild(table);
+}
+
+tentarAnos(anoAtual);
