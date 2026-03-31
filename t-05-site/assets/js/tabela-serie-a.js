@@ -15,7 +15,7 @@ const anoAtual = data.getFullYear()
 
 titulo.innerHTML += " " + anoAtual
 
-fetch("https://v3.football.api-sports.io/standings?season=" + anoAtual + "&league=71", requestOptions)
+fetch("https://v3.football.api-sports.io/standings?league=71" + "&season=" + anoAtual,requestOptions)
     .then(response => response.json())
     .then(data => {
         var container = document.getElementById("tabela");
@@ -38,7 +38,7 @@ fetch("https://v3.football.api-sports.io/standings?season=" + anoAtual + "&leagu
 
         var tbody = document.createElement("tbody");
 
-        data.response[0].leagues.standings[0].forEach(teamStanding => {
+        data.response[0].league.standings[0].forEach(teamStanding => {
             var row = document.createElement("tr");
 
             var rowData = [
