@@ -1,13 +1,10 @@
 const titulo = document.getElementById("main-titulo")
 
-var myHeaders = new Headers();
-myHeaders.append("x-rapidapi-key", "5b4e68c8328830ffe84cb2472a09cdef");
-myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
-
-var requestOptions = {
+const requestOptions = {
     method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+    headers: {
+        "x-rapidapi-key": "5b4e68c8328830ffe84cb2472a09cdef"
+    }
 };
 
 const data = new Date()
@@ -15,7 +12,7 @@ const anoAtual = data.getFullYear()
 
 titulo.innerHTML += " " + anoAtual
 
-fetch("https://v3.football.api-sports.io/standings?league=71" + "&season=" + anoAtual,requestOptions)
+fetch("https://v3.football.api-sports.io/standings?league=71&season=" + anoAtual,requestOptions)
     .then(response => response.json())
     .then(data => {
         var container = document.getElementById("tabela");
